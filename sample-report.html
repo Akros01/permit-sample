@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sample — Collin County residential permit report</title>
+<style>
+:root { --ink:#14181d; --muted:#5c6873; --line:#dfe4e9; --accent:#0f6f5c; --accent-soft:#e8f3f0;
+        --warn:#8a5a12; --warn-soft:#fdf4e3; }
+* { box-sizing:border-box; }
+body { margin:0; color:var(--ink); background:#fff; font:15px/1.55 Georgia, "Times New Roman", serif; }
+.page { max-width:860px; margin:0 auto; padding:0 38px 64px; }
+.samplebar { background:var(--warn-soft); border-bottom:1px solid #eddfc2;
+             font:13px/1.5 -apple-system, "Segoe UI", sans-serif; }
+.samplebar .inner { max-width:860px; margin:0 auto; padding:12px 38px; display:flex;
+                    flex-wrap:wrap; gap:6px 14px; align-items:baseline; }
+.samplebar b { color:var(--warn); text-transform:uppercase; letter-spacing:.12em; font-size:11px; }
+.samplebar a { color:var(--accent); font-weight:600; text-decoration:none; }
+.samplebar a:hover { text-decoration:underline; }
+.kicker { font:600 11px/1.2 -apple-system, "Segoe UI", sans-serif; letter-spacing:.14em;
+          text-transform:uppercase; color:var(--accent); margin:34px 0 10px; }
+h1 { font-size:34px; line-height:1.15; margin:0 0 8px; letter-spacing:-.01em; }
+.deck { color:var(--muted); font-size:16px; margin:0 0 28px; max-width:62ch; }
+.stats { display:flex; gap:14px; flex-wrap:wrap; margin:0 0 34px; }
+.stat { flex:1 1 140px; border:1px solid var(--line); border-radius:10px; padding:14px 16px; }
+.stat b { display:block; font:600 27px/1.1 -apple-system, "Segoe UI", sans-serif; }
+.stat span { font:12px/1.3 -apple-system, "Segoe UI", sans-serif; color:var(--muted);
+             text-transform:uppercase; letter-spacing:.06em; }
+h2 { font:600 18px/1.2 -apple-system, "Segoe UI", sans-serif; margin:34px 0 6px; }
+.note { color:var(--muted); font-size:13px; margin:0 0 12px;
+        font-family:-apple-system, "Segoe UI", sans-serif; }
+table { width:100%; border-collapse:collapse; font-size:13px;
+        font-family:-apple-system, "Segoe UI", sans-serif; }
+.tw { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+th { text-align:left; font-weight:600; color:var(--muted); font-size:11px; text-transform:uppercase;
+     letter-spacing:.07em; padding:7px 8px; border-bottom:1.5px solid var(--ink); }
+td { padding:7px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+td:first-child { white-space:nowrap; }
+td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+tr:nth-child(even) td { background:#fafbfc; }
+.callout { background:var(--accent-soft); border-left:3px solid var(--accent);
+           padding:14px 16px; margin:26px 0; font-size:14px; }
+.trunc { border:1px dashed #c9d2da; border-radius:8px; padding:12px 14px; color:var(--muted);
+         font:13px/1.5 -apple-system, "Segoe UI", sans-serif; margin:14px 0 0; }
+footer { margin-top:40px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted);
+         font-size:12px; font-family:-apple-system, "Segoe UI", sans-serif; }
+@media (max-width:640px) { .page { padding:0 18px 48px; } .samplebar .inner { padding:12px 18px; } }
+@media print { body { font-size:11pt; } .page { padding:0; max-width:none; } .samplebar { display:none; } }
+</style></head>
+<body>
+<div class="samplebar"><div class="inner">
+  <b>Sample</b>
+  <span>34 of the 879 permits in this edition are shown here. The download carries all of them.</span>
+  <a href="catalog.html">&larr; Back to all six reports</a>
+  <a href="sample-permits.csv">These rows as a CSV &rarr;</a>
+</div></div>
+<div class="page">
+  <p class="kicker">Permit Almanac &middot; Collin County, TX (Plano, Frisco, McKinney, Allen)</p>
+  <h1>Residential permit report</h1>
+  <p class="deck">Every residential permit Collin County published from October 12, 2026 to
+  November 10, 2026, classified by job type and grouped by ZIP code. Pool and spa permits are
+  listed in full.</p>
+
+  <div class="stats">
+    <div class="stat"><b>879</b><span>Permits issued</span></div>
+    <div class="stat"><b>50</b><span>Pool &amp; spa</span></div>
+    <div class="stat"><b>26</b><span>ZIP codes</span></div>
+    <div class="stat"><b>106</b><span>Re-roofs</span></div>
+    <div class="stat"><b>29%</b><span>Value published</span></div>
+  </div>
+
+  <p class="note">The county published a declared job value on 255 of 879 permits (29%). Where it did not, <code>declared_value</code> is blank rather than $0: blank means the county published no value, not that the work was worthless.</p>
+
+  <div class="callout"><strong>How to use this.</strong> A new pool permit means a household that
+  will need service, fencing, landscaping and equipment within weeks. Work the pool list first,
+  then the ZIP table to decide where the volume is.</div>
+
+  <h2>Pool and spa addresses</h2>
+  <p class="note">Issued in the window, taken from the public record. 10 shown of 50.</p>
+  <div class="tw"><table><thead><tr><th>Issued</th><th>Address</th><th>ZIP</th><th>Work</th><th>Contractor</th></tr></thead>
+<tbody><tr><td>2026-10-13</td><td>1355 Morgan Ct</td><td>75002</td><td>POOL &amp; SPA</td><td>Gold Medal Pools</td></tr>
+<tr><td>2026-10-13</td><td>605 Hackney Dr</td><td>75407</td><td>POOL</td><td>Js Pool &amp; Patio Remodeling</td></tr>
+<tr><td>2026-10-13</td><td>1828 Iris Ln</td><td>75009</td><td>POOL/SPA</td><td>J. Anthony Custom Pools</td></tr>
+<tr><td>2026-10-13</td><td>200 Phyllis Dr</td><td>75098</td><td></td><td>Foley Pools</td></tr>
+<tr><td>2026-10-15</td><td>825 Lake Vista Ln</td><td>75166</td><td>POOL PER CLA OCT 2026 PERMIT REPORT</td><td>Not Given</td></tr>
+<tr><td>2026-10-15</td><td>17308 Calla Dr</td><td>75252</td><td>NEW POOL PER OCT 2026 PERMIT REPORT;</td><td></td></tr>
+<tr><td>2026-10-17</td><td>3020 Blackthorn Dr</td><td>75078</td><td>POOL</td><td>Anne Abbey Pool Design &amp; Build</td></tr>
+<tr><td>2026-10-17</td><td>100 Kayla Ct</td><td>75078</td><td>POOL &amp; SPA</td><td>Foley Pools</td></tr>
+<tr><td>2026-10-17</td><td>620 Columbia Dr</td><td>75078</td><td>POOL/SPA</td><td>Hauk Custom Pools</td></tr>
+<tr><td>2026-10-17</td><td>671 Sibyl Ln</td><td>75078</td><td>POOL</td><td>Canyon Oak Pools</td></tr></tbody></table></div>
+  <p class="trunc">The full report lists all 50 pool and spa addresses one by one.</p>
+
+  <h2>Where the permits are</h2>
+  <p class="note">Top ZIP codes by total residential permits, with pool permits shown separately.
+  6 shown of 26.</p>
+  <div class="tw"><table><thead><tr><th>ZIP</th><th><span class="num">Permits</span></th><th><span class="num">Pool / spa</span></th></tr></thead>
+<tbody><tr><td>75035</td><td class='num'>124</td><td class='num'>3</td></tr>
+<tr><td>75002</td><td class='num'>117</td><td class='num'>6</td></tr>
+<tr><td>75407</td><td class='num'>103</td><td class='num'>1</td></tr>
+<tr><td>75098</td><td class='num'>83</td><td class='num'>1</td></tr>
+<tr><td>75013</td><td class='num'>81</td><td class='num'>0</td></tr>
+<tr><td>75173</td><td class='num'>46</td><td class='num'>0</td></tr></tbody></table></div>
+
+  <h2>By job type</h2>
+  <p class="note">One house build produces several permits (building, electrical, mechanical,
+  plumbing), so these are permits issued, not separate projects. A single permit that covers
+  several trades at once is counted once, under the trade that best describes the work.</p>
+  <div class="tw"><table><thead><tr><th>Job type</th><th><span class="num">Permits</span></th></tr></thead>
+<tbody><tr><td>Pool / spa</td><td class='num'>51</td></tr>
+<tr><td>Re-roof</td><td class='num'>106</td></tr>
+<tr><td>Addition / remodel</td><td class='num'>24</td></tr>
+<tr><td>New house</td><td class='num'>294</td></tr>
+<tr><td>Solar / battery</td><td class='num'>27</td></tr>
+<tr><td>HVAC change-out</td><td class='num'>40</td></tr>
+<tr><td>Plumbing (other)</td><td class='num'>45</td></tr>
+<tr><td>Electrical (other)</td><td class='num'>19</td></tr>
+<tr><td>Patio / flatwork</td><td class='num'>23</td></tr>
+<tr><td>Foundation repair</td><td class='num'>140</td></tr>
+<tr><td>Fence</td><td class='num'>31</td></tr>
+<tr><td>Supplemental / revision</td><td class='num'>5</td></tr>
+<tr><td>Other</td><td class='num'>74</td></tr></tbody></table></div>
+
+  <h2>Every permit, one row each</h2>
+  <p class="note">A slice across the job types, in the shape of the full list: date, address,
+  ZIP, type, work description and the dollar value where the city published one. 24 shown.</p>
+  <div class="tw"><table><thead><tr><th>Issued</th><th>Address</th><th>ZIP</th><th>Type</th><th>Work</th><th><span class="num">Value</span></th></tr></thead>
+<tbody><tr><td>2026-10-13</td><td>2201 Nuehoff Dr</td><td>75409</td><td>Re-roof</td><td>REROOF PER NOVEMBER 2025 PERMIT REPORT;</td><td class='num'></td></tr>
+<tr><td>2026-10-13</td><td>1405 David Dr</td><td>75409</td><td>Re-roof</td><td>REROOF PER NOVEMBER 2025 PERMIT REPORT;</td><td class='num'></td></tr>
+<tr><td>2026-10-13</td><td>2205 Nuehoff Dr</td><td>75409</td><td>Re-roof</td><td>REROOF PER NOVEMBER 2025 PERMIT REPORT;</td><td class='num'></td></tr>
+<tr><td>2026-10-13</td><td>23 White Rock Trl</td><td>75002</td><td>Addition / remodel</td><td>REMODEL - REPLACING 32 WINDOWS LIKE FOR </td><td class='num'></td></tr>
+<tr><td>2026-10-13</td><td>3 Chula Vista Cir</td><td>75098</td><td>Addition / remodel</td><td>REMODEL - REMOVING WINDOWS, ADDING SLIDI</td><td class='num'></td></tr>
+<tr><td>2026-10-13</td><td>902 Spruce Ln</td><td>75407</td><td>Addition / remodel</td><td>CONSTRUCT SUNROOM ON NEW CONCRETE, PER O</td><td class='num'></td></tr>
+<tr><td>2026-10-13</td><td>1232 Dean Meadow Ln</td><td>75002</td><td>New house</td><td>NSFR;</td><td class='num'></td></tr>
+<tr><td>2026-10-13</td><td>600 Valley Pines Dr</td><td>75409</td><td>New house</td><td>NEW SFR;</td><td class='num'></td></tr>
+<tr><td>2026-10-13</td><td>1613 Denali Dr</td><td>75409</td><td>New house</td><td>NEW SFR;</td><td class='num'></td></tr>
+<tr><td>2026-10-13</td><td>1745 Stinson Rd</td><td>75002</td><td>Solar / battery</td><td>SOLAR</td><td class='num'></td></tr>
+<tr><td>2026-10-14</td><td>910 Bluewood St</td><td>75407</td><td>Solar / battery</td><td>ROOFTOP SOLAR, PER OCT 2026 CPN PERMIT R</td><td class='num'></td></tr>
+<tr><td>2026-10-14</td><td>818 Torrey Ave</td><td>75407</td><td>Solar / battery</td><td>ROOFTOP SOLAR, PER OCT 2026 CPN PERMIT R</td><td class='num'></td></tr>
+<tr><td>2026-10-13</td><td>1828 Fairbanks Dr</td><td>75407</td><td>HVAC change-out</td><td>4 TON CONDENSER CHANGEOUT, PER OCT 2026 </td><td class='num'></td></tr>
+<tr><td>2026-10-13</td><td>102 Carriage Run Dr</td><td>75098</td><td>HVAC change-out</td><td>HVAC, PER OCT 2026 CWY PERMIT REPORT</td><td class='num'></td></tr>
+<tr><td>2026-10-13</td><td>816 Shallowater Dr</td><td>75013</td><td>HVAC change-out</td><td>HVAC-4 TON CONDENSER AND EVAP COIL PER C</td><td class='num'></td></tr>
+<tr><td>2026-10-13</td><td>103 S Fourth St</td><td>75098</td><td>Plumbing (other)</td><td>PLUMBING, PER OCT 2026 CWY PERMIT REPORT</td><td class='num'>$5,700</td></tr>
+<tr><td>2026-10-13</td><td>1410 Macrae Ct</td><td>75013</td><td>Plumbing (other)</td><td>SEWER REPAIR 8FT TUNNEL AND DOUBLE CLEAN</td><td class='num'></td></tr>
+<tr><td>2026-10-13</td><td>740 Cheyenne Dr</td><td>75002</td><td>Plumbing (other)</td><td>SEWER LINE REPAIR UNDER HOME PER CAL OCT</td><td class='num'>$7,400</td></tr>
+<tr><td>2026-10-13</td><td>1300 Ardmore Way</td><td>75098</td><td>Electrical (other)</td><td>ELEC, PER OCT 2026 CWY PERMIT REPORT</td><td class='num'>$14,885</td></tr>
+<tr><td>2026-10-13</td><td>2107 Fairway Winds Ct</td><td>75098</td><td>Electrical (other)</td><td>ELEC, PER OCT 2026 CWY PERMIT REPORT</td><td class='num'>$8,000</td></tr>
+<tr><td>2026-10-14</td><td>402 Nevada Trl</td><td>75094</td><td>Electrical (other)</td><td>ELECTRICAL PER OCT PERMIT REPORT;</td><td class='num'></td></tr>
+<tr><td>2026-10-13</td><td>570 Weston Rd</td><td>75009</td><td>Patio / flatwork</td><td>PATIO PER WESTON OCT 2026 PERMIT REPORT</td><td class='num'></td></tr>
+<tr><td>2026-10-14</td><td>342 Willow Wood St</td><td>75094</td><td>Patio / flatwork</td><td>ARBOR/PATIO PER OCTOBER PERMIT REPORT;</td><td class='num'></td></tr>
+<tr><td>2026-10-15</td><td>210 Lynge Dr</td><td>75013</td><td>Patio / flatwork</td><td>BUILDING 13X30.5 ATTACHED PATIO COVER PE</td><td class='num'>$18,000</td></tr></tbody></table></div>
+  <p class="trunc">The download lists all 879 permits in date order, and ships the same rows
+  as <code>permits.csv</code> with the permit number and contractor for each one.</p>
+
+  <footer>
+    <p><strong>In this download:</strong> this report, <code>permits.csv</code> (every permit as a
+    row, ready for a spreadsheet or CRM) and <code>SOURCES.txt</code> (source and retrieval
+    details).</p>
+    Source: data.texas.gov, dataset 82ee-gbj5. This sample comes from the same run as the paid
+    edition, so its figures match the full report.
+  </footer>
+</div>
+</body></html>
