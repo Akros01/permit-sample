@@ -1,0 +1,314 @@
+<!doctype html>
+<!-- Checkout links are generated from products/checkout.json by scripts/wire_checkout.py.
+     Edit the JSON and rerun the script; do not hand-edit the block between the checkout markers. -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Residential permit reports — six metros, $19 each</title>
+<meta name="description" content="Every residential permit from six US metros, classified by job type and grouped by ZIP. Pool and spa addresses listed individually. $19 each." />
+<style>
+  :root {
+    --ink:#14181d; --muted:#5c6873; --line:#dfe4e9; --paper:#ffffff;
+    --accent:#0f6f5c; --soft:#e8f3f0; --warn:#8a5a12; --warn-soft:#fdf4e3;
+    --sans:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --serif:Georgia, "Times New Roman", serif;
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 var(--sans); }
+  .wrap { max-width:1020px; margin:0 auto; padding:0 24px; }
+
+  header.top { border-bottom:1px solid var(--line); }
+  header.top .wrap { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 24px; }
+  .brand { font:600 13px/1 var(--sans); letter-spacing:.16em; text-transform:uppercase; color:var(--accent); }
+  .price-tag { font:600 13px/1 var(--sans); border:1px solid var(--line); border-radius:999px; padding:8px 14px; color:var(--muted); }
+
+  .hero { padding:64px 0 40px; }
+  .kicker { font:600 11px/1.2 var(--sans); letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin:0 0 14px; }
+  h1 { font:400 clamp(32px, 5vw, 52px)/1.08 var(--serif); letter-spacing:-.015em; margin:0 0 18px; max-width:20ch; }
+  .deck { font-size:19px; line-height:1.55; color:var(--muted); max-width:62ch; margin:0 0 30px; }
+  .deck strong { color:var(--ink); font-weight:600; }
+
+  .stats { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:14px; }
+  .stat { border:1px solid var(--line); border-radius:12px; padding:16px 18px; }
+  .stat b { display:block; font:600 30px/1.1 var(--sans); letter-spacing:-.02em; font-variant-numeric:tabular-nums; }
+  .stat span { display:block; margin-top:4px; font-size:12px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted); }
+
+  section { padding:44px 0; border-top:1px solid var(--line); }
+  h2 { font:600 22px/1.25 var(--sans); letter-spacing:-.01em; margin:0 0 6px; }
+  .sub { color:var(--muted); margin:0 0 22px; max-width:66ch; }
+
+  .scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  table { width:100%; border-collapse:collapse; font-size:14px; min-width:840px; }
+  caption { text-align:left; color:var(--muted); font-size:13px; padding-bottom:10px; }
+  th { text-align:left; font:600 11px/1.3 var(--sans); letter-spacing:.08em; text-transform:uppercase;
+       color:var(--muted); padding:10px 12px; border-bottom:1.5px solid var(--ink); white-space:nowrap; }
+  td { padding:11px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  tr:nth-child(even) td { background:#fafbfc; }
+  td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  td.metro { font-weight:600; white-space:nowrap; }
+  .yes { color:var(--accent); font-weight:600; }
+  .no { color:var(--warn); font-weight:600; }
+  th.buy, td.buy-cell { text-align:right; white-space:nowrap; }
+  .rowbuy { display:inline-block; font:600 12.5px/1 var(--sans); border-radius:8px;
+            padding:9px 13px; background:var(--ink); color:#fff; text-decoration:none; }
+  .rowbuy:hover { background:var(--accent); }
+  .rowbuy.pending { background:transparent; color:var(--muted); font-weight:600;
+                    border:1px dashed #c6d0d9; }
+
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px; }
+  .card { border:1px solid var(--line); border-radius:12px; padding:20px 20px 18px; }
+  .card h3 { font:600 15px/1.3 var(--sans); margin:0 0 8px; }
+  .card p { margin:0; color:var(--muted); font-size:14.5px; }
+  .card p b { color:var(--ink); font-weight:600; }
+
+  .weak { border:1px solid var(--line); border-left:3px solid var(--warn); background:var(--warn-soft);
+          border-radius:10px; padding:18px 20px; }
+  .weak ul { margin:0; padding-left:18px; }
+  .weak li { margin:0 0 8px; font-size:14.5px; }
+  .weak li:last-child { margin-bottom:0; }
+  .weak b { font-weight:600; }
+
+  .buy { background:var(--soft); border-radius:14px; padding:30px; display:flex; flex-wrap:wrap;
+         align-items:center; justify-content:space-between; gap:22px; }
+  .buy h2 { margin:0 0 4px; }
+  .buy p { margin:0; color:#33605a; font-size:14.5px; }
+  .cta { font:600 15px/1 var(--sans); background:var(--ink); color:#fff; border:0; border-radius:10px;
+         padding:15px 22px; cursor:not-allowed; opacity:.55; }
+  .cta-note { display:block; margin-top:8px; font-size:12.5px; color:#33605a; }
+  .sample-links { display:flex; flex-wrap:wrap; gap:22px; margin:0; }
+  .sample-links a { color:var(--accent); font-weight:600; text-decoration:none; font-size:15px;
+                    border-bottom:2px solid var(--accent); padding-bottom:1px; }
+  .sample-links a:hover { background:var(--soft); }
+  .buy-links { display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; max-width:560px; }
+  a.cta { display:inline-block; text-decoration:none; cursor:pointer; opacity:1; }
+  a.cta:hover { background:var(--accent); }
+
+  .files { font:13px/1.9 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color:var(--muted);
+           background:#fafbfc; border:1px solid var(--line); border-radius:10px; padding:16px 18px; overflow-x:auto; }
+
+  footer { border-top:1px solid var(--line); padding:28px 0 56px; color:var(--muted); font-size:13px; }
+  footer p { margin:0 0 8px; max-width:80ch; }
+
+  @media (max-width:640px) {
+    .hero { padding:44px 0 32px; }
+    section { padding:34px 0; }
+    .buy { padding:24px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <span class="brand">Permit Pipeline</span>
+    <span class="price-tag">$19 per report</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <p class="kicker">Six US metros &middot; public record</p>
+    <h1>Every residential permit, classified by what the job actually is.</h1>
+    <p class="deck">Six metro reports built from each city's own permit feed. Each one lists every
+      residential permit for the window, labels it by job type, groups it by ZIP code, and prints the
+      pool and spa addresses one by one. <strong>$19 each, one file, no subscription.</strong></p>
+    <div class="stats">
+      <div class="stat"><b><!-- m:totals.permits -->15,460<!-- /m:totals.permits --></b><span>Residential permits</span></div>
+      <div class="stat"><b><!-- m:totals.pools -->562<!-- /m:totals.pools --></b><span>Pool &amp; spa addresses</span></div>
+      <div class="stat"><b><!-- m:totals.reports -->6<!-- /m:totals.reports --></b><span>Metro reports</span></div>
+      <div class="stat"><b>$19</b><span>Each, one-off</span></div>
+    </div>
+  </div>
+
+  <section>
+    <h2>The six, side by side</h2>
+    <p class="sub">"Declared value" is the share of permits where the city actually published a job
+      value. "Contractor names" means the report can tell you who pulled the permit. The
+      <b>Pool / spa</b> column counts addresses, not permits — a build that also draws plumbing and
+      electrical permits is listed once — and the permit totals count permits issued, not projects.</p>
+    <div class="scroll">
+      <table>
+        <caption>Windows run from <!-- m:totals.window_start_long -->13 October 2026<!-- /m:totals.window_start_long -->. Coverage ends where each city's feed ended.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Metro</th>
+            <th scope="col" class="num">Permits</th>
+            <th scope="col">Coverage</th>
+            <th scope="col" class="num">ZIPs</th>
+            <th scope="col" class="num">Pool / spa</th>
+            <th scope="col" class="num">Declared value</th>
+            <th scope="col">Contractor names</th>
+            <th scope="col" class="buy">Buy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="metro">Austin, TX</td><td class="num"><!-- m:austin.permits -->3,880<!-- /m:austin.permits --></td><td><!-- m:austin.coverage -->Oct 13 – Nov 10<!-- /m:austin.coverage --></td><td class="num"><!-- m:austin.zips -->45<!-- /m:austin.zips --></td><td class="num"><!-- m:austin.pools -->172<!-- /m:austin.pools --></td><td class="num"><!-- m:austin.valued -->0.5%<!-- /m:austin.valued --></td><td class="yes"><!-- m:austin.contractor -->Yes<!-- /m:austin.contractor --></td><td class="buy-cell"><!-- checkout:austin --><a class="rowbuy" href="https://abdulicious38.gumroad.com/l/pqyewv" rel="noopener">Buy — $19</a><!-- /checkout:austin --></td></tr>
+          <tr><td class="metro">Los Angeles, CA</td><td class="num"><!-- m:los-angeles.permits -->3,652<!-- /m:los-angeles.permits --></td><td><!-- m:los-angeles.coverage -->Oct 13 – Nov 7<!-- /m:los-angeles.coverage --></td><td class="num"><!-- m:los-angeles.zips -->105<!-- /m:los-angeles.zips --></td><td class="num"><!-- m:los-angeles.pools -->142<!-- /m:los-angeles.pools --></td><td class="num"><!-- m:los-angeles.valued -->93%<!-- /m:los-angeles.valued --></td><td class="no"><!-- m:los-angeles.contractor -->No<!-- /m:los-angeles.contractor --></td><td class="buy-cell"><!-- checkout:los-angeles --><a class="rowbuy" href="https://abdulicious38.gumroad.com/l/vxcli" rel="noopener">Buy — $19</a><!-- /checkout:los-angeles --></td></tr>
+          <tr><td class="metro">Collin County, TX</td><td class="num"><!-- m:collin-county.permits -->879<!-- /m:collin-county.permits --></td><td><!-- m:collin-county.coverage -->Oct 13 – Nov 10<!-- /m:collin-county.coverage --></td><td class="num"><!-- m:collin-county.zips -->26<!-- /m:collin-county.zips --></td><td class="num"><!-- m:collin-county.pools -->50<!-- /m:collin-county.pools --></td><td class="num"><!-- m:collin-county.valued -->29%<!-- /m:collin-county.valued --></td><td class="yes"><!-- m:collin-county.contractor -->Yes<!-- /m:collin-county.contractor --></td><td class="buy-cell"><!-- checkout:collin-county --><a class="rowbuy" href="https://abdulicious38.gumroad.com/l/maztsr" rel="noopener">Buy — $19</a><!-- /checkout:collin-county --></td></tr>
+          <tr><td class="metro">Dallas, TX</td><td class="num"><!-- m:dallas.permits -->3,983<!-- /m:dallas.permits --></td><td><!-- m:dallas.coverage -->Oct 13 – Nov 11<!-- /m:dallas.coverage --></td><td class="num"><!-- m:dallas.zips -->46<!-- /m:dallas.zips --></td><td class="num"><!-- m:dallas.pools -->183<!-- /m:dallas.pools --></td><td class="num"><!-- m:dallas.valued -->0%<!-- /m:dallas.valued --></td><td class="no"><!-- m:dallas.contractor -->No<!-- /m:dallas.contractor --></td><td class="buy-cell"><!-- checkout:dallas --><a class="rowbuy" href="https://abdulicious38.gumroad.com/l/csceeu" rel="noopener">Buy — $19</a><!-- /checkout:dallas --></td></tr>
+          <tr><td class="metro">Chicago, IL</td><td class="num"><!-- m:chicago.permits -->2,431<!-- /m:chicago.permits --></td><td><!-- m:chicago.coverage -->Oct 13 – Nov 10<!-- /m:chicago.coverage --></td><td class="num"><!-- m:chicago.zips -->0<!-- /m:chicago.zips --></td><td class="num"><!-- m:chicago.pools -->4<!-- /m:chicago.pools --></td><td class="num"><!-- m:chicago.valued -->84%<!-- /m:chicago.valued --></td><td class="no"><!-- m:chicago.contractor -->No<!-- /m:chicago.contractor --></td><td class="buy-cell"><!-- checkout:chicago --><a class="rowbuy" href="https://abdulicious38.gumroad.com/l/wnhxy" rel="noopener">Buy — $19</a><!-- /checkout:chicago --></td></tr>
+          <tr><td class="metro">Sacramento, CA</td><td class="num"><!-- m:sacramento.permits -->635<!-- /m:sacramento.permits --></td><td><!-- m:sacramento.coverage -->Oct 13 – Oct 25<!-- /m:sacramento.coverage --></td><td class="num"><!-- m:sacramento.zips -->22<!-- /m:sacramento.zips --></td><td class="num"><!-- m:sacramento.pools -->11<!-- /m:sacramento.pools --></td><td class="num"><!-- m:sacramento.valued -->99.5%<!-- /m:sacramento.valued --></td><td class="yes"><!-- m:sacramento.contractor -->Yes<!-- /m:sacramento.contractor --></td><td class="buy-cell"><!-- checkout:sacramento --><a class="rowbuy" href="https://abdulicious38.gumroad.com/l/mpquikg" rel="noopener">Buy — $19</a><!-- /checkout:sacramento --></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Which one to buy</h2>
+    <p class="sub">The reports are not interchangeable. Pick by the work you sell.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Pools and pool service</h3>
+        <p>The biggest pool lists are Austin (<b><!-- m:austin.pools -->172<!-- /m:austin.pools --></b> pool addresses), Dallas
+          (<b><!-- m:dallas.pools -->183<!-- /m:dallas.pools --></b>) and Los Angeles (<b><!-- m:los-angeles.pools -->142<!-- /m:los-angeles.pools --></b>). Austin is the one for
+          competitive work: <b><!-- m:austin.pools -->172<!-- /m:austin.pools --></b> addresses from <b><!-- m:austin.pool_contractors -->83<!-- /m:austin.pool_contractors --></b> different contractors. Collin County adds
+          <b><!-- m:collin-county.pools -->50<!-- /m:collin-county.pools --></b> from <!-- m:collin-county.pool_contractors -->33<!-- /m:collin-county.pool_contractors --> firms.</p>
+      </div>
+      <div class="card">
+        <h3>HVAC, electrical, plumbing</h3>
+        <p>Dallas is densest: <b><!-- m:dallas.plumbing -->950<!-- /m:dallas.plumbing --></b> plumbing, <b><!-- m:dallas.electrical -->440<!-- /m:dallas.electrical --></b> electrical, <b><!-- m:dallas.hvac_replacement -->498<!-- /m:dallas.hvac_replacement --></b> HVAC change-outs,
+          <b><!-- m:dallas.water_heater -->206<!-- /m:dallas.water_heater --></b> water heaters. Austin next. Sacramento is small but almost pure replacement work.</p>
+      </div>
+      <div class="card">
+        <h3>Roofing</h3>
+        <p>Los Angeles is the outlier at <b><!-- m:los-angeles.reroof -->1,184<!-- /m:los-angeles.reroof --></b> re-roofs in under a month. Chicago <b><!-- m:chicago.reroof -->454<!-- /m:chicago.reroof --></b>,
+          Dallas <b><!-- m:dallas.reroof -->265<!-- /m:dallas.reroof --></b>, Sacramento <b><!-- m:sacramento.reroof -->117<!-- /m:sacramento.reroof --></b>, Collin <b><!-- m:collin-county.reroof -->106<!-- /m:collin-county.reroof --></b>. Austin publishes few (<b><!-- m:austin.reroof -->39<!-- /m:austin.reroof --></b>) — not the one for roofs.</p>
+      </div>
+      <div class="card">
+        <h3>New construction</h3>
+        <p>Austin leads with <b><!-- m:austin.new_homes -->495<!-- /m:austin.new_homes --></b> new houses, then Collin County <b><!-- m:collin-county.new_homes -->293<!-- /m:collin-county.new_homes --></b>, Dallas <b><!-- m:dallas.new_homes -->238<!-- /m:dallas.new_homes --></b> and
+          Chicago <b><!-- m:chicago.new_homes -->139<!-- /m:chicago.new_homes --></b>.</p>
+        <p>The trade work that follows is uneven: Dallas <b><!-- m:dallas.new_home_trades -->136<!-- /m:dallas.new_home_trades --></b> further permits at its new-house addresses, Austin <b><!-- m:austin.new_home_trades -->166<!-- /m:austin.new_home_trades --></b>, Los Angeles <b><!-- m:los-angeles.new_home_trades -->11<!-- /m:los-angeles.new_home_trades --></b>, Chicago <b><!-- m:chicago.new_home_trades -->5<!-- /m:chicago.new_home_trades --></b>.</p>
+      </div>
+      <div class="card">
+        <h3>Foundations and drainage</h3>
+        <p>Collin County is the only report with a real foundation cohort — <b><!-- m:collin-county.foundation -->140<!-- /m:collin-county.foundation --></b> permits, driven by
+          new-build settling.</p>
+      </div>
+      <div class="card">
+        <h3>Fire alarms and life safety</h3>
+                <p>Chicago is the only feed here that publishes alarms as their own permits —
+          <b><!-- m:chicago.fire_alarm -->98<!-- /m:chicago.fire_alarm --></b> in the window, covering installs, repairs and
+          modifications. A keyword scan of the other five finds only incidental mentions —
+          irrigation sprinklers, alarms mentioned inside a larger job — so their absence from those
+          reports is a gap in the source, not in the work.</p>
+      </div>
+      <div class="card">
+        <h3>Fences</h3>
+                <p>Dallas <b><!-- m:dallas.fence -->163<!-- /m:dallas.fence --></b>, Chicago <b><!-- m:chicago.fence -->69<!-- /m:chicago.fence --></b>, Collin County
+          <b><!-- m:collin-county.fence -->31<!-- /m:collin-county.fence --></b>, Austin <b><!-- m:austin.fence -->3<!-- /m:austin.fence --></b>. Dallas files fences as residential accessory-structure
+          permits, which is why they never surfaced as a trade; Austin describes them plainly inside building permits, so it yields a short list; Los Angeles and Sacramento fold fencing into broader scopes and produce none.</p>
+      </div>
+      <div class="card">
+        <h3>ZIP-level targeting</h3>
+        <p>Five of the six carry ZIP codes. <b>Chicago does not</b>, so that report has no ZIP grouping and
+          cannot be filtered by neighbourhood.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What every download contains</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>report.html</h3>
+        <p>The report itself. Opens in any browser, prints cleanly to PDF.</p>
+      </div>
+      <div class="card">
+        <h3>permits.csv</h3>
+        <p>One row per permit: date, permit number, job type, address, ZIP, description, permit type,
+          contractor and value where published, and a link to that permit's record. In Austin the link
+          opens the city's permit page. The other five cities publish no per-permit page, so there the
+          link opens the city's own JSON record: the same data as the row, best read in a JSON viewer
+          or imported straight into a spreadsheet. Same columns in every metro, so the six combine
+          into one spreadsheet.</p>
+      </div>
+      <div class="card">
+        <h3>SOURCES.txt</h3>
+        <p>The source dataset or ArcGIS layer, the exact filter used, and the retrieval time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Where each one is weak</h2>
+    <p class="sub">Stated here so nobody buys the wrong report.</p>
+    <div class="weak">
+      <ul>
+        <li><b>Austin</b> — the city publishes a job value on only <!-- m:austin.valued_count -->19<!-- /m:austin.valued_count --> of <!-- m:austin.permits -->3,880<!-- /m:austin.permits --> permits, so the dollar
+          column is effectively empty. Few re-roofs. <!-- m:austin.supplemental -->18<!-- /m:austin.supplemental --> of its permits are supplemental
+          revisions — resubmittals that change plans on permits already issued, not new work.</li>
+        <li><b>Los Angeles</b> — no contractor column. <!-- m:los-angeles.supplemental_pct -->19%<!-- /m:los-angeles.supplemental_pct --> of its permits are supplemental revisions to permits already issued — filed to change plans, not new work — so count the job types, not the row totals. <!-- m:los-angeles.other_pct -->0.4%<!-- /m:los-angeles.other_pct --> remain Other.</li>
+        <li><b>Collin County</b> — value on <!-- m:collin-county.valued -->29%<!-- /m:collin-county.valued --> of rows; the smallest Texas list at <!-- m:collin-county.permits -->879<!-- /m:collin-county.permits --> permits.</li>
+        <li><b>Dallas</b> — no dollar values at all and no contractor column. Buy it for volume and mix.</li>
+        <li><b>Chicago</b> — no property ZIP and only <!-- m:chicago.pools -->4<!-- /m:chicago.pools --> pool addresses. <!-- m:chicago.supplemental_pct -->9%<!-- /m:chicago.supplemental_pct --> are supplemental revisions — contractor swaps, plan amendments, changes of owner — so count the trades; <!-- m:chicago.other_pct -->0.8%<!-- /m:chicago.other_pct --> remain Other.</li>
+        <li><b>Sacramento</b> — smallest list at <!-- m:sacramento.permits -->635<!-- /m:sacramento.permits --> and its feed runs about two weeks behind; coverage ends
+          25 October. <!-- m:sacramento.pools -->11<!-- /m:sacramento.pools --> pool addresses.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>How people use these</h2>
+    <p class="sub">A new pool permit is a household that will need service, fencing, landscaping and
+      equipment within weeks. A water heater or a re-roof is a household that just hired someone. The ZIP
+      table shows where the volume sits before you commit a route, and the CSV imports into any
+      spreadsheet or CRM.</p>
+  </section>
+
+  <section>
+    <h2>See one before you buy</h2>
+    <p class="sub">The Collin County report with the lid off: same layout, same tables, every figure
+      real, but only 34 of its <!-- m:collin-county.permits -->879<!-- /m:collin-county.permits --> permits shown. The download carries all of them, plus the CSV.</p>
+    <p class="sample-links"><a href="https://abdulicious38.gumroad.com/l/ytnuw" rel="noopener">Get the free sample &rarr;</a></p>
+    <p class="sub">The sample is a free Gumroad download: the report and those same rows as a CSV,
+      no payment and no subscription. You can also
+      <a href="https://akros01.github.io/permit-sample/" rel="noopener">read the sample report here</a>
+      without leaving this page's site.</p>
+  </section>
+
+  <section>
+    <h2>Price</h2>
+    <!-- checkout:start -->
+    <div class="buy">
+      <div>
+        <h2>$19 per metro</h2>
+        <p>One file, one purchase, no subscription. Use it inside your business, including client work.</p>
+        <span class="cta-note">Six listings — buy only the metro you need.</span>
+      </div>
+      <div class="buy-links">
+        <a class="cta" href="https://abdulicious38.gumroad.com/l/pqyewv" rel="noopener">Austin, TX — $19</a>
+        <a class="cta" href="https://abdulicious38.gumroad.com/l/vxcli" rel="noopener">Los Angeles, CA — $19</a>
+        <a class="cta" href="https://abdulicious38.gumroad.com/l/maztsr" rel="noopener">Collin County, TX — $19</a>
+        <a class="cta" href="https://abdulicious38.gumroad.com/l/csceeu" rel="noopener">Dallas, TX — $19</a>
+        <a class="cta" href="https://abdulicious38.gumroad.com/l/wnhxy" rel="noopener">Chicago, IL — $19</a>
+        <a class="cta" href="https://abdulicious38.gumroad.com/l/mpquikg" rel="noopener">Sacramento, CA — $19</a>
+      </div>
+    </div>
+    <!-- checkout:end -->
+  </section>
+
+  <section>
+    <h2>How delivery works</h2>
+    <p class="sub">Gumroad emails the download link as soon as the payment clears, and the same file
+      stays in your Gumroad library. One zip per metro — the report, the CSV and the sources sheet —
+      no account to manage and no subscription to cancel.</p>
+    <p class="sub">Each link in the price list above goes to that metro's own page, where the edition
+      window, the permit count and that market's weak spots are stated before you pay.</p>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Public record, compiled and classified.</strong> Every figure on this page comes from the
+      city data in the linked reports. Permit details only — the cities do not publish homeowner names,
+      phone numbers or emails, and neither do these reports.</p>
+    <p>Not a guaranteed lead list: some work happens without a permit, and cities revise records after
+      publication. Do not resell or redistribute the files themselves.</p>
+  </div>
+</footer>
+
+</body>
+</html>
