@@ -205,8 +205,14 @@
       </div>
       <div class="card">
         <h3>ZIP-level targeting</h3>
-        <p>Five of the six carry ZIP codes. <b>Chicago does not</b>, so that report has no ZIP grouping and
-          cannot be filtered by neighbourhood.</p>
+        <p>All six carry ZIP codes. Five publish them on the permit itself; Chicago's feed has no
+          property ZIP, so each row's ZIP is worked out from the parcel coordinates the city
+          publishes, placed inside the city's own ZIP boundary map. That resolves
+          <!-- m:chicago.zips_covered -->2,436<!-- /m:chicago.zips_covered --> of
+          <!-- m:chicago.permits -->2,476<!-- /m:chicago.permits --> rows
+          (<!-- m:chicago.zips_covered_pct -->98%<!-- /m:chicago.zips_covered_pct -->) across
+          <!-- m:chicago.zips -->59<!-- /m:chicago.zips --> ZIP codes; the rest carry a blank ZIP
+          rather than a guess.</p>
       </div>
     </div>
   </section>
@@ -245,7 +251,7 @@
         <li><b>Los Angeles</b> — no contractor column. <!-- m:los-angeles.supplemental_pct -->19%<!-- /m:los-angeles.supplemental_pct --> of its permits are supplemental revisions to permits already issued — filed to change plans, not new work — so count the job types, not the row totals. <!-- m:los-angeles.other_pct -->0.4%<!-- /m:los-angeles.other_pct --> remain Other.</li>
         <li><b>Collin County</b> — value on <!-- m:collin-county.valued -->29%<!-- /m:collin-county.valued --> of rows; the smallest Texas list at <!-- m:collin-county.permits -->879<!-- /m:collin-county.permits --> permits.</li>
         <li><b>Dallas</b> — no dollar values at all and no contractor column. Buy it for volume and mix.</li>
-        <li><b>Chicago</b> — no property ZIP and only <!-- m:chicago.pools -->4<!-- /m:chicago.pools --> pool addresses. <!-- m:chicago.supplemental_pct -->9%<!-- /m:chicago.supplemental_pct --> are supplemental revisions — contractor swaps, plan amendments, changes of owner — so count the trades; <!-- m:chicago.other_pct -->0.8%<!-- /m:chicago.other_pct --> remain Other.</li>
+        <li><b>Chicago</b> — ZIPs derived from coordinates rather than published (98% of rows), and only <!-- m:chicago.pools -->4<!-- /m:chicago.pools --> pool addresses. <!-- m:chicago.supplemental_pct -->9%<!-- /m:chicago.supplemental_pct --> are supplemental revisions — contractor swaps, plan amendments, changes of owner — so count the trades; <!-- m:chicago.other_pct -->0.8%<!-- /m:chicago.other_pct --> remain Other.</li>
         <li><b>Sacramento</b> — smallest list at <!-- m:sacramento.permits -->635<!-- /m:sacramento.permits --> and its feed runs about two weeks behind; coverage ends
           25 October. <!-- m:sacramento.pools -->11<!-- /m:sacramento.pools --> pool addresses.</li>
       </ul>
