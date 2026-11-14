@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://akros01.github.io/permit-sample/sitemap.xml
