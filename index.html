@@ -6,7 +6,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Permit Almanac — residential permit reports, six metros, $29 each</title>
-<meta name="description" content="Every residential permit from six US metros, classified by job type and grouped by ZIP. Pool and spa addresses listed individually. $29 each; any three $69, all six $99." />
+<meta name="description" content="Every residential permit from six US metros, classified by job type and grouped by ZIP. Pool and spa addresses listed individually. $29 each; any three $69, all six $129." />
 <style>
   :root {
     --ink:#14181d; --muted:#5c6873; --line:#dfe4e9; --paper:#ffffff;
@@ -87,6 +87,21 @@
   a.cta { display:inline-block; text-decoration:none; cursor:pointer; opacity:1; }
   a.cta:hover { background:var(--accent); }
 
+  .pulse { background:var(--soft); border-radius:14px; padding:28px 30px; }
+  .pulse-kicker { font:600 11px/1.2 var(--sans); letter-spacing:.14em; text-transform:uppercase;
+                  color:var(--accent); margin:0 0 8px; }
+  .pulse h2 { margin:0 0 8px; }
+  .pulse-copy { margin:0 0 18px; color:var(--muted); max-width:64ch; }
+  .pulse-form { display:flex; flex-wrap:wrap; gap:10px; align-items:stretch; }
+  .pulse-form input[type=email] { flex:1 1 260px; min-width:0; font:15px/1.2 var(--sans);
+    padding:13px 14px; border:1px solid var(--line); border-radius:10px; background:#fff;
+    color:var(--ink); }
+  .pulse-form input[type=email]:focus { outline:2px solid var(--accent); outline-offset:1px; }
+  .pulse-form button { font:600 15px/1 var(--sans); background:var(--ink); color:#fff; border:0;
+    border-radius:10px; padding:15px 22px; cursor:pointer; }
+  .pulse-form button:hover { background:var(--accent); }
+  .pulse-note { margin:12px 0 0; color:var(--muted); font:12.5px/1.5 var(--sans); max-width:70ch; }
+
   .files { font:13px/1.9 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color:var(--muted);
            background:#fafbfc; border:1px solid var(--line); border-radius:10px; padding:16px 18px; overflow-x:auto; }
 
@@ -105,7 +120,7 @@
 <header class="top">
   <div class="wrap">
     <span class="brand">Permit Almanac</span>
-    <span class="price-tag">$29 per report · $69 for three · $99 for six</span>
+    <span class="price-tag">$29 per report · $69 for three · $129 for six</span>
   </div>
 </header>
 
@@ -115,7 +130,7 @@
     <h1>Every residential permit, classified by what the job actually is.</h1>
     <p class="deck">Six metro reports built from each city's own permit feed. Each one lists every
       residential permit for the window, labels it by job type, groups it by ZIP code, and prints the
-      pool and spa addresses one by one. <strong>$29 for one metro, $69 for any three, $99 for all
+      pool and spa addresses one by one. <strong>$29 for one metro, $69 for any three, $129 for all
       six</strong> — one file each, one purchase, no subscription.</p>
     <div class="stats">
       <div class="stat"><b><!-- m:totals.permits -->15,593<!-- /m:totals.permits --></b><span>Residential permits</span></div>
@@ -123,7 +138,7 @@
       <div class="stat"><b><!-- m:totals.reports -->6<!-- /m:totals.reports --></b><span>Metro reports</span></div>
       <div class="stat"><b>$29</b><span>One metro</span></div>
       <div class="stat"><b>$69</b><span>Any three</span></div>
-      <div class="stat"><b>$99</b><span>All six</span></div>
+      <div class="stat"><b>$129</b><span>All six</span></div>
     </div>
   </div>
 
@@ -286,13 +301,19 @@
       879 permits, plus those same rows as a CSV in the delivered column set.</p>
   </section>
 
+  <section id="pulse">
+    <!-- newsletter:start -->
+<p class="pulse-kicker">Weekly permit pulse</p><h2>What got permitted in your metro, every week</h2><p class="pulse-copy">One email a week: new residential permits by trade and ZIP, the pool and spa addresses worth calling first, and what moved. Free, and no more than one email a week.</p><p class="pulse-note">The signup is being connected; check back shortly. No email is collected on this page until it opens.</p>
+    <!-- newsletter:end -->
+  </section>
+
   <section>
     <h2>Price</h2>
     <!-- checkout:start -->
     <div class="buy">
       <div>
         <h2>$29 per metro</h2>
-        <p>One metro $29, any three $69, all six $99. One file per metro, one purchase, no subscription — and a founding price of $19 on a single metro while the store is launching (code FOUNDING19).</p>
+        <p>One metro $29, any three $69, all six $129. One file per metro, one purchase, no subscription — and a founding price of $19 on a single metro while the store is launching (code FOUNDING19).</p>
         <span class="cta-note">Six listings — buy only the metro you need.</span>
       </div>
       <div class="buy-links">
@@ -302,8 +323,9 @@
         <a class="cta" href="https://abdulicious38.gumroad.com/l/csceeu" rel="noopener">Dallas, TX — $29</a>
         <a class="cta" href="https://abdulicious38.gumroad.com/l/wnhxy" rel="noopener">Chicago, IL — $29</a>
         <a class="cta" href="https://abdulicious38.gumroad.com/l/mpquikg" rel="noopener">Sacramento, CA — $29</a>
-        <button class="cta bundle" type="button" disabled aria-disabled="true">Any three metros — $69 · pending</button>
-        <button class="cta bundle" type="button" disabled aria-disabled="true">All six — $99 · pending</button>
+        <a class="cta bundle" href="https://abdulicious38.gumroad.com/l/yznoop" rel="noopener">Any three metros — $69</a>
+        <a class="cta bundle" href="https://abdulicious38.gumroad.com/l/zqnnsa" rel="noopener">All six — $129</a>
+        <p class="cta-note pass-links">Season pass — four editions for $89: <a href="https://abdulicious38.gumroad.com/l/jeisqw" rel="noopener">Austin</a> · <a href="https://abdulicious38.gumroad.com/l/qofegz" rel="noopener">Los Angeles</a> · <a href="https://abdulicious38.gumroad.com/l/orfroc" rel="noopener">Collin County</a> · <a href="https://abdulicious38.gumroad.com/l/deiui" rel="noopener">Dallas</a> · <a href="https://abdulicious38.gumroad.com/l/tzsewq" rel="noopener">Chicago</a> · <a href="https://abdulicious38.gumroad.com/l/xnsspn" rel="noopener">Sacramento</a></p>
       </div>
     </div>
     <!-- checkout:end -->
