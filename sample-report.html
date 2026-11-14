@@ -44,6 +44,22 @@ footer { margin-top:40px; padding-top:16px; border-top:1px solid var(--line); co
          font-size:12px; font-family:-apple-system, "Segoe UI", sans-serif; }
 @media (max-width:640px) { .page { padding:0 18px 48px; } .samplebar .inner { padding:12px 18px; } }
 @media print { body { font-size:11pt; } .page { padding:0; max-width:none; } .samplebar { display:none; } }
+
+.pulse { background:var(--accent-soft, #e8f3f0); border-radius:14px; padding:28px 30px; }
+.pulse-kicker { font:600 11px/1.2 -apple-system, "Segoe UI", sans-serif; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--accent); margin:0 0 8px; }
+.pulse h2 { margin:0 0 8px; }
+.pulse-copy { margin:0 0 18px; color:var(--muted); max-width:64ch; }
+.pulse-form { display:flex; flex-wrap:wrap; gap:10px; align-items:stretch; }
+.pulse-form input[type=email] { flex:1 1 260px; min-width:0; font:15px/1.2 -apple-system,
+  "Segoe UI", sans-serif; padding:13px 14px; border:1px solid var(--line); border-radius:10px;
+  background:#fff; color:var(--ink); }
+.pulse-form input[type=email]:focus { outline:2px solid var(--accent); outline-offset:1px; }
+.pulse-form button { font:600 15px/1 -apple-system, "Segoe UI", sans-serif; background:var(--ink);
+  color:#fff; border:0; border-radius:10px; padding:15px 22px; cursor:pointer; }
+.pulse-form button:hover { background:var(--accent); }
+.pulse-note { margin:12px 0 0; color:var(--muted); font:12.5px/1.5 -apple-system, "Segoe UI",
+  sans-serif; max-width:70ch; }
 </style></head>
 <body>
 <div class="samplebar"><div class="inner">
@@ -149,6 +165,9 @@ footer { margin-top:40px; padding-top:16px; border-top:1px solid var(--line); co
   <p class="trunc">The download lists all 879 permits in date order, and ships the same rows
   as <code>permits.csv</code> with the permit number and contractor for each one.</p>
 
+  <section class="pulse">
+<p class="pulse-kicker">Weekly permit pulse</p><h2>What got permitted in your metro, every week</h2><p class="pulse-copy">One email a week: new residential permits by trade and ZIP, the pool and spa addresses worth calling first, and what moved. Free, and no more than one email a week.</p><p class="pulse-note">The signup is being connected; check back shortly. No email is collected on this page until it opens.</p>
+  </section>
   <footer>
     <p><strong>In this download:</strong> this report, <code>permits.csv</code> (every permit as a
     row, ready for a spreadsheet or CRM) and <code>SOURCES.txt</code> (source and retrieval
